@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest  #github's provided runner
     steps:
       - name: clone repo
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
       - name: AWS credentials configuration
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{env.AWS_ROLE}}   #OIDC
           aws-region: ${{env.AWS_REGION}}
       - name: Login to ECR
-        uses: aws-action/amazon-ecr-login@v1
+        uses: aws-actions/amazon-ecr-login@v1
 
 
