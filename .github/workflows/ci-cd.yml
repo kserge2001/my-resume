@@ -11,6 +11,7 @@ permissions:
   contents: read 
 
 env:
+
   AWS_REGION: us-east-1
   AWS_ROLE: ${{ secrets.AWS_ACTION_ROLE }}
   ECR_REPO_NAME: dev
