@@ -107,6 +107,7 @@ jobs:
                 **Advisory:** ${v.PrimaryURL || 'N/A'}
               `).join('\n');
 
+
 Deploy:
     runs-on: ubuntu-latest
     needs: Build  # Depends on Build job
@@ -133,7 +134,4 @@ Deploy:
       
       - name: Update ECS service
         run: |
-          aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --task-definition ${{ env.NEW_TASK_DEFINITION }} --force-new-deployment
-
-
-
+          aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --task-definition ${{ env.NEW_TASK_DEFINITION }} --force-new-deployment \\
